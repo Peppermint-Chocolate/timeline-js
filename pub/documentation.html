@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Timeline JS Documentation</title>
+        <link rel="stylesheet" type="text/css" href="./examples.css">
+		<script defer type="text/javascript" src='js/Timeline.js'></script>
+        <script defer type="text/javascript" src='js/examples.js'></script>
+	</head>
+
+	<body>
+        <header>
+            <div class="MainTitle">
+                <h1> Documentation of Timeline.JS </h1> 
+            </div>
+
+            <nav class="NavigationBar">
+                <a href="homepage.html"> Timeline.JS </a>
+                <a href="examples.html"> Examples </a>
+                <a href="documentation.html" class="active"> Documentation </a>
+            </nav> 
+        </header>
+
+        <div class = "homepage" style = "display: block; float: left; width: 100%">
+            <h2 class = "steps">Getting Started </h2>
+
+            <div class = "homepage-description">
+                To get started, you should import the Timeline.JS library as s script shown below into the Head of your html file. 
+            </div>
+
+            <div class = "started-code">
+                <blockquote>&lt;script defer type="text/javascript" src='js/Timeline.js'&gt;&lt;/script&gt;</blockquote>
+            </div>
+
+            <div class = "homepage-description">
+                Before creating a new timeline, make sure that in the Body of your html file you have a Div tag that has a unique Id. 
+                This Id should be identical to the timelineId of the timeline you will construct. An example is given below: 
+            </div>
+
+            <div class = "started-code">
+                <blockquote>&lt;div id="Example_1"&gt;&lt;/div&gt;</blockquote>
+            </div>
+        </div>
+
+
+        <div class = "homepage" style = "display: block; float: left; width: 100%">
+            <h2 class = "steps">JS Object Structure </h2>
+            <table>
+				<tr><th>Property</th>
+					<th>Description</th>
+					<th>Example Value</th></tr>
+				<tr>
+					<td>tId (string)</td>
+					<td>The unique ID of the timeline</td>
+					<td>"Timeline_1"</td>
+				</tr>
+                <tr>
+					<td>eId (string)</td>
+					<td>The unique ID of the event</td>
+					<td>"Event_1"</td>
+				</tr>
+				<tr>
+					<td>tTitle (string)</td>
+					<td>The title of the timeline</td>
+					<td>"CSC309H1 Semester Timeline"</td>
+				</tr>
+				<tr>
+					<td>tBackgroundColor (string)</td>
+					<td>Colour code that defines background color of the timeline</td>
+					<td>"rgba(95, 95, 95, 0.2)"</td>
+				</tr>
+				<tr>
+					<td>width (string)</td>
+					<td>The width of the timeline in px</td>
+					<td>"800px"</td>
+				</tr>
+				<tr>
+					<td>eTitle (string)</td>
+					<td>The title of the event</td>
+					<td>"Alpha Release"</td>
+				</tr>
+				<tr>
+					<td>content (string)</td>
+					<td>The content of the event</td>
+					<td>"Exercise on twitter layout"</td>
+				</tr>
+				<tr>
+					<td>posX (string)</td>
+					<td>The position of of the event on the timeline</td>
+					<td>"260px"</td>
+				</tr>
+				<tr>
+					<td>eBackgroundColor (string)</td>
+					<td>The colour code that defines background color of the event</td>
+					<td>"rgba(95, 95, 95, 0.2)"</td>
+				</tr>
+				<tr>
+					<td>events (dictionary)</td>
+					<td>Pairs of event Id and tag name </td>
+					<td>{{Start: "default"}, {A_1: "Assignments"}, {P_1: "Team_Project"}}</td>
+				</tr>
+				<tr>
+					<td>tags (dictionary)</td>
+					<td>Pairs of tag name and tag color code </td>
+					<td>{{default: "rgba(255, 255, 255, 0.8)"}, {Assignments: "rgba(250, 255, 229, 0.8)"}, {Team_Project: "rgba(249, 231, 241, 0.8)"}}</td>
+				</tr>
+			</table>
+        </div>
+
+
+        <div class = "homepage" style = "display: block; float: left;">
+            <h2 class = "steps"> Common Methods </h2>
+
+            <div class="methods"> 
+                <h2 class = "methods-heading"> Constuctor of Timeline </h2>
+
+                <div class = "methods-description">
+                    This function constructs a new instance of timeline. 
+                </div>
+
+
+                <div class = "methods-code">
+                    <p>// example </p>
+                    <p> const t0 = new TimelineGenerator();  </p>
+                </div>
+            </div>
+
+            <div class="methods"> 
+                <h2 class = "methods-heading"> makeTimeline(querySelector, tId, title, width = "1000px", backgroundColor = "rgba(50, 50, 50, 0.3)") </h2>
+
+                <div class = "methods-description">
+                    This function creates a new timeline in the Div tag specified by the input. Unless specified, the timeline will have a default width of 1000px and a background color of light grey. 
+                </div>
+
+                <div class = "methods-code">
+                    <p>// example </p>
+                    <p>t0.makeTimeline("Example_0", "Example0", "CSC309H1 Semester Timeline", "1000px", "rgba(163, 161, 165, 0.7)"); </p>
+                </div>
+            </div>
+
+            <div class="methods"> 
+                <h2 class = "methods-heading"> makeEvent(querySelector, eId, title, content = "", posX = "0px") </h2>
+
+                <div class = "methods-description">
+                    This function adds a new event to the timeline by inputting unique event Id, title, content, and position. 
+                    If the content does not have any input, an event with empty content will be created. 
+                </div>
+
+                <div class = "methods-code">
+                    <p>// example </p>
+                    <p>
+                        t0.makeEvent("Example_0", "A_2", "Asgmt.2", "Exercise on library system", "390px"); 
+                    </p>
+                </div>
+            </div>
+
+            <div class="methods"> 
+                <h2 class = "methods-heading"> updateEventContent(eId, title = "", content = "") </h2>
+
+                <div class = "methods-description">
+                    This fucntion updates the title and/or content of a event identified by the input event Id. 
+                    For example, if the user didn't input anything for the event title, the original event title will be displayed. 
+                </div>
+
+                <div class = "methods-code">
+                    <p>// example </p>
+                    <p>
+                        t0.updateEventContent("A_1", "", "Exercise on twitter layout"); 
+                    </p>
+                </div>
+            </div>
+
+            <div class="methods"> 
+                <h2 class = "methods-heading"> updateEventPosition(eId, posX) </h2>
+
+                <div class = "methods-description">
+                    This fucntion updates the position of a event identified by the input event Id. 
+                    The posX should be a number between 0px and the width of the timeline. 
+                </div>
+
+                <div class = "methods-code">
+                    <p>// example </p>
+                    <p>
+                        t0.updateEventPosition("A_2", "260px"); 
+                    </p>
+                </div>
+            </div>
+
+            <div class="methods"> 
+                <h2 class = "methods-heading"> createTag(tagName, tagColor = "rgba(255, 255, 255, 0.8)") </h2>
+
+                <div class = "methods-description">
+                    This function creates a tag with name and color specified by the input. The tag name cannot contain spaces. 
+                    If no color is specified, the tag color will be initialized as default (coconut white). 
+                    A maximum of 3 tags will be displayed on the timeline due to space restriction. 
+                </div>
+
+                <div class = "methods-code">
+                    <p>// example </p>
+                    <p>// create a "Individual_Project" tag and initialize the tag color to blue </p>
+                    <p>
+                        t0.createTag("Individual_Project", "rgba(222, 245, 244, 0.8)"); 
+                    </p>
+                </div>
+            </div>
+
+            <div class="methods"> 
+                <h2 class = "methods-heading"> addTagToEvent(eId, tagName) </h2>
+
+                <div class = "methods-description">
+                    This function addes a tag specified by its tagName to an event specified by its event Id. 
+                    The event will now have the same color as the tag. The change can also be seen at the bottom left of the timeline, where a list of events are displayed. 
+                </div>
+
+                <div class = "methods-code">
+                    <p>// example </p>
+                    <p>
+                        t0.addTagToEvent("IP_1", "Individual_Project");  
+                    </p>
+                </div>
+            </div>
+
+            <div class="methods"> 
+                <h2 class = "methods-heading"> changeColorForBaseEvents(backgroundColor = "rgba(255, 255, 255, 0.8)") </h2>
+
+                <div class = "methods-description">
+                    This function takes in a color value as input and changes the color of all untagged events accordingly. 
+                    Newly created events will also display the changed base colour. 
+
+                    Events that belongs to a tag will remain its original color. 
+                </div>
+
+                <div class = "methods-code">
+                    <p>// example </p>
+                    <p>// change base color to light green </p>
+                    <p>
+                        t0.changeColorForBaseEvents("rgba(214, 247, 197, 1)"); 
+                    </p>
+                </div>
+            </div>
+
+            <div class="methods"> 
+                <h2 class = "methods-heading"> changeBackground(backgroundColor) </h2>
+
+                <div class = "methods-description">
+                    This function takes in a color value as input and change the background color of the timeline accordingly. 
+                </div>
+
+                <div class = "methods-code">
+                    <p>// example </p>
+                    <p>// change the base color to blue </p>
+                    <p>
+                        t0.changeBackground("rgba(123, 177, 234, 0.7)");
+                    </p>
+                </div>
+            </div>
+
+            <div class="methods"> 
+                <h2 class = "methods-heading"> removeTag(tagName) </h2>
+
+                <div class = "methods-description">
+                    This function removes a tag as specified by its input tag name. The tag will be removed from the list of tags displayed at the bottom left of the timeline. 
+                    All events that belongs to this tag will also displayed the base/default color. 
+                </div>
+
+                <div class = "methods-code">
+                    <p>// example </p>
+                    <p>// remove the "Team_Project" tag </p>
+                    <p>
+                        t0.removeTag("Team_Project"); 
+                    </p>
+                </div>
+            </div>
+
+            <div class="methods"> 
+                <h2 class = "methods-heading"> deleteEvent(eId) </h2>
+
+                <div class = "methods-description">
+                    This function deletes an event from the timeline as specified by its input event Id. 
+                    The event will be removed from the timeline display. 
+                    If the event belongs to a tag, the event title will also be removed from the list of tags at the bottom left of the timeline. 
+                </div>
+
+                <div class = "methods-code">
+                    <p>// example </p>
+                    <p>
+                        t0.deleteEvent("A_2"); 
+                    </p>
+                </div>
+            </div>
+
+            <div class="methods"> 
+                <h2 class = "methods-heading"> clearTimeline(backgroundColor = "rgba(50, 50, 50, 0.3)") </h2>
+
+                <div class = "methods-description">
+                    This function clears all events and tags from the timeline, and reset its background color to default light grey. 
+                </div>
+
+                <div class = "methods-code">
+                    <p>// example </p>
+                    <p>
+                        t0.clearTimeline(); 
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="vspace1"></div>
+
+	</body>
+</html>

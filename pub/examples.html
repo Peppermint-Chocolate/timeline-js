@@ -1,0 +1,505 @@
+
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Timeline JS Examples</title>
+        <link rel="stylesheet" type="text/css" href="./examples.css">
+		<script defer type="text/javascript" src='js/Timeline.js'></script>
+        <script defer type="text/javascript" src='js/examples.js'></script>
+	</head>
+
+	<body>
+        <header>
+            <div class="MainTitle">
+                <h1> Examples of Timeline.JS </h1> 
+            </div>
+
+            <nav class="NavigationBar">
+                <a href="homepage.html"> Timeline.JS </a>
+                <a href="examples.html" class="active"> Examples </a>
+                <a href="documentation.html" > Documentation </a>
+            </nav> 
+        </header>
+
+
+
+        <!-- Example 0 Example 0 Example 0  -->
+
+        <div class = "examples" style = "float: left;">
+            <div class = "substeps">
+                <div class = "top-description">
+                    <p>
+                        I have constructed our semester timeline using Timeline.JS. You can have some fun playing with it, or scroll down some more to see how it was made! 
+                    </p>
+                </div>
+            </div>
+
+            <div id="Example_0"></div>
+
+
+            <!-- User Action -- insertEvent  -->
+            <form id="insertEvent" class="example0">
+                <input id="inserteId" type="text" placeholder="Event ID" required>
+                <input id="insertTitle" type="text" placeholder="Title" required>
+                <input id="insertContent" type="text" placeholder="Content (optional)">
+                <input id="insertPosition" type="text" placeholder="Position">
+                <input type="submit" value="Add Event" class="button">
+            </form>
+
+
+            <!-- User Action -- updateEventContent  -->
+            <form id="updateEventContent" class="example0">
+                <input id="updateId_content" type="text" placeholder="Event ID" required>
+                <input id="updateTitle" type="text" placeholder="Title (optional)">
+                <input id="updateContent" type="text" placeholder="Content (optional)">
+                <!-- <input id="updatePosition" type="text" placeholder="Position"> -->
+                <input type="submit" value="Update Event Content" class="button">
+            </form>
+
+
+            <!-- User Action -- updateEventPosition  -->
+            <form id="updateEventPosition" class="example0">
+                <input id="updateId_position" type="text" placeholder="Event ID" required>
+                <input id="updatePosition" type="text" placeholder="Position" required>
+                <input type="submit" value="Update Event Position" class="button">
+            </form>
+
+
+            <!-- User Action -- addTagToEvent  -->
+            <form id="addTagToEvent" class="example0">
+                <input id="addTagEId" type="text" placeholder="Event ID" required>
+                <input id="addTagName" type="text" placeholder="Tag_Name" required>
+                <input type="submit" value="Add Tag to Event" class="button"> 
+            </form>
+
+
+
+             <!-- User Action -- createTag  -->
+             <form id="createTag" class="example0">
+                <input id="createTagName" type="text" placeholder="Tag_Name (max 3 tags)" required>
+                <input id="chooseTagColor" type="color">
+                <input type="submit" value="Create Tag" class="button"> 
+            </form>
+
+
+
+            <!-- User Action -- removeTag  -->
+            <form id="removeTag" class="example0">
+                <input id="removeTagName" type="text" placeholder="Tag_Name" required>
+                <input type="submit" value="Remove Tag" class="button"> 
+            </form>
+
+
+
+            <!-- User Action -- deleteEvent  -->
+            <form id="deleteEvent" class="example0">
+                <input id="deleteId" type="text" placeholder="Event ID" required>
+                <input type="submit" value="Delete Event" class="button">
+            </form>
+
+
+            <!-- User Action -- changeColorBaseEvents -->
+            <form id="changeColorBaseEvents" class="example0">
+                <input id="newChangeColorBaseEvents" type="color" required>
+                <input type="submit" value="Set Base Events Color" class="button">
+            </form>
+
+
+
+            <!-- User Action -- changeColorBackground -->
+            <form id="changeColorBackground" class="example0">
+                <input id="newChangeColorBackground" type="color" required>
+                <input type="submit" value="Set Background Color" class="button">
+            </form>
+
+
+
+            <!-- User Action -- clearTimeline  -->
+            <form id="clearTimeline" class="example0">
+                <input type="submit" value="Clear All Events" class="button">
+            </form>
+
+
+        </div>
+        
+
+        <div class="vspace1"></div>
+
+        <hr>
+
+        <div class="vspace1"></div>
+
+
+
+        <div class = "examples" style = "float: left;">
+            <h2 class = "steps">1. Create a New Timeline</h2>
+
+            <div class = "substeps">
+                <div class = "description">
+                    <p> 
+                        Firstly, we should make sure in the HTML file's there exists a div tag with a unique ID. 
+                    </p>
+                </div>
+
+
+                <div class="code" style="width:fit-content;">
+                    <p>< div id="Example_1">< /div> </p>
+                </div>
+            </div>
+
+            <div class = "substeps">
+                <div class = "description">
+                    <p> 
+                        We could initialize the new timeline from passing our expected timeline ID, timeline title,  width and background color as arguments to the constructor. The first argument should match the ID in div tag where the timeline will be placed.
+                    </p>
+                </div>
+
+
+                <div class="code">
+                    <p>const t1 = new TimelineGenerator() </p>
+                    <p>t1.makeTimeline("Example_1", "Example1", "CSC309H1 Semester Timeline", "1000px", "rgba(163, 161, 165, 0.7)") </p>
+                </div>
+
+                <div class="tryout">  
+                </div>
+
+                <div id="Example_1" class="timeline-example"></div>
+            </div>
+        </div>
+
+
+        <div class = "examples" style = "float: left;">
+            <h2 class = "steps">2. Add Events into the Timeline</h2>
+
+            <div class = "substeps">
+                <div class = "description">
+                    <p>
+                        We can create an event by specifying its unique event ID, title, content, position on timeline, as well as the background color. The first argument should still match the div tag of the timeline. 
+                    </p>
+                    <p>
+                    We could call makeEvent multiple times to add many events to the timeline.
+                    </p>
+                </div>
+
+                <div class="code">
+                    <p>t1.makeEvent("Example_1", "Start_2", "Start of Term", "Course starts", "50px")  </p>
+                    <p>t1.makeEvent("Example_1", "End_2", "End of Term", "Course ends", "950px") </p>
+                    <p>t1.makeEvent("Example_1", "A_1_2", "Asgmt.1", "Ex 1", "150px") </p>
+                    <p>  </p>
+                    <p> <b> ///// try the code below yourself! //// </b> </p>
+                    <p> t1.makeEvent("Example_1", "A_2_2", "Asgmt.2", "Exercise on library system", "390px")  </p>
+                    <p> // Hint: Event Id = "A_2_2", Title = "Asgmt.2", etc.  </p>
+                    <p> t1.makeEvent("Example_1", "A_3_2", "Asgmt.3", "Eexercise on restaurant reservation", "570px") </p>
+                </div>
+
+                <div class="tryout">  
+                    <form id="insertEvent_2">
+                        <input id="inserteId_2" type="text" placeholder="Event ID" required>
+                        <input id="insertTitle_2" type="text" placeholder="Title" required>
+                        <input id="insertContent_2" type="text" placeholder="Content (optional)">
+                        <input id="insertPosition_2" type="text" placeholder="Position">
+                        <input type="submit" value="Add Event" class="button">
+                    </form>
+                </div>
+
+                <div id="Example_2" class="timeline-example"></div>
+            </div>
+        </div>
+
+
+        <div class = "examples" style = "float: left;">
+            <h2 class = "steps">3. Update Title/Content of an Event </h2>
+
+            <div class = "substeps">
+                <div class = "description">
+                    <p>
+                        We could update the title and/or content of an event by specifying its unique Event ID. The function automatically updates the event title and/or content based on what you input, and the rest of the event remains the same. 
+                    </p>
+                </div>
+
+                <div class="code">
+                    <p> <b>//// try the code below yourself! //// </b> </p>
+                    <p> t1.updateEventContent("A_1_3", "", "Exercise on twitter layout") </p>
+                    <p> // Hint: Event Id = "A_1_3", Content = "Exercise on twitter layout", etc. </p>
+                </div>
+
+                <div class="tryout">  
+                    <form id="updateEventContent_3">
+                        <input id="updateId_content_3" type="text" placeholder="Event ID" required>
+                        <input id="updateTitle_3" type="text" placeholder="Title (optional)">
+                        <input id="updateContent_3" type="text" placeholder="Content (optional)">
+                        <input type="submit" value="Update Event Content" class="button">
+                    </form>
+                </div>
+
+                <div id="Example_3" class="timeline-example"></div>
+            </div>
+        </div>
+
+
+        <div class = "examples" style = "float: left;">
+            <h2 class = "steps">4. Update Position of an Event </h2>
+
+            <div class = "substeps">
+                <div class = "description">
+                    <p>
+                        We could update the position of an event by specifying its unique Event ID. The input should be in the range of 0px and the timeline's width in px. 
+                    </p>
+                </div>
+
+                <div class="code">
+                    <p> <b> ///// try the code below yourself! //// </b> </p>
+                    <p> t1.updateEventPosition("A_2_4", "260px")  </p>
+                    <p> // Hint: Event Id = "A_2_4", Position = "260px"  </p>
+
+                </div>
+
+                <div class="tryout">  
+                    <form id="updateEventPosition_4">
+                        <input id="updateId_position_4" type="text" placeholder="Event ID" required>
+                        <input id="updatePosition_4" type="text" placeholder="Position" required>
+                        <input type="submit" value="Update Event Position" class="button">
+                    </form>
+                </div>
+
+                <div id="Example_4" class="timeline-example"></div>
+            </div>
+        </div>
+
+
+        <div class = "examples" style = "float: left;">
+            <h2 class = "steps">5. Create a New Tag</h2>
+
+            <div class = "substeps">
+                <div class = "description">
+                    <p> 
+                        We could create tags to categorize the events. All tags are automatically displayed at the bottom left of the timeline. You could also choose a color for your new tag. Tag_name should not contain any spaces. For asthetic reasons, a maximum of 3 tags are displayed. 
+                    </p>
+                </div>
+
+                <div class="code">
+                    <p> t1.createTag("Assignments", "rgba(250, 255, 229, 0.8)") // add a yellow tag  </p>
+                    <p> t1.createTag("Team_Project", "rgba(249, 231, 241, 0.8)") // add a pink tag  </p>
+                    <p>  </p>
+                    <p> <b> ///// try the code below yourself! //// </b> </p>
+                    <p> t1.createTag("Individual_Project", "rgba(222, 245, 244, 0.8)") // add a blue tag </p>
+                    <p> // Hint: Tag_Name = "Individual_Project", pick a color you like  </p>
+                </div>
+
+                <div class="tryout">  
+                    <form id="createTag_5">
+                        <input id="createTagName_5" type="text" placeholder="Tag_Name (max 3 tags)" required>
+                        <input id="chooseTagColor_5" type="color">
+                        <input type="submit" value="Create Tag" class="button"> 
+                    </form>
+                </div>
+
+                <div id="Example_5" class="timeline-example"></div>
+            </div>
+        </div>
+
+
+        <div class = "examples" style = "float: left;">
+            <h2 class = "steps">6. Attach a Tag to an Event </h2>
+
+            <div class = "substeps">
+                <div class = "description">
+                    <p> 
+                        We could add an existing tag to an event by specifying the Event ID and the tag_name. The target event will be automatically appear to be in the tag's colour. The event title will also appear to the right of the specified tag at the bottom left of the timeline. 
+                    </p>
+                </div>
+
+                <div class="code">
+                    <p> t1.addTagToEvent("A_1_6", "Assignments")  </p>
+                    <p>  </p>
+                    <p> <b> ///// try the code below yourself! //// </b> </p>
+                    <p> t1.addTagToEvent("A_2_6", "Assignments")  </p>
+                    <p> // Hint: Event ID = "A_2_6", Tag_Name = "Assignments"  </p>
+                    <p> t1.addTagToEvent("A_3_6", "Assignments") </p>
+                </div>
+
+                <div class="tryout">  
+                    <form id="addTagToEvent_6">
+                        <input id="addTagEId_6" type="text" placeholder="Event ID" required>
+                        <input id="addTagName_6" type="text" placeholder="Tag_Name" required>
+                        <input type="submit" value="Add Tag to Event" class="button"> 
+                    </form>
+                </div>
+
+                <div id="Example_6" class="timeline-example"></div>
+            </div>
+
+            <div class = "substeps">
+                <div class = "description">
+                    <p>
+                        From repeating the previous steps, we could add, update, and categorize a few more events. We can now obtain a timeline similar to the one below. 
+                        Note that the "Start of Term" and "End of Term" events does not belong to any tag. Their colour is not specified so they are still displayed in the default/base event color (coconut white). 
+                    </p>
+                </div>
+
+                <div id="Example_6_1" class="timeline-example"></div>
+            </div>
+        </div>
+
+
+        <div class = "examples" style = "float: left;">
+            <h2 class = "steps">7. Remove a Tag </h2>
+
+            <div class = "substeps">
+                <div class = "description">
+                    <p>
+                        We could remove a tag from the timeline by specifying its tag_name. Deleting a tag will automatically remove the tag name and its events list from the bottom left of the timeline. All events previously belonged to this tag will now be displayed in the default/base color. 
+                    </p>
+                </div>
+
+                <div class="code">
+                    <p> t1.removeTag("Team_Project") // remove the pink tag </p>
+                    <p>  </p>
+                    <p> <b> ///// try the code below yourself! //// </b> </p>
+                    <p> t1.removeTag("Assignments") // remove the yellow tag  </p>
+                    <p> // Hint: Tag_Name = "Assignments"  </p> 
+                </div>
+
+                <div class="tryout">  
+                    <form id="removeTag_7">
+                        <input id="removeTagName_7" type="text" placeholder="Tag_Name" required>
+                        <input type="submit" value="Remove Tag" class="button"> 
+                    </form>
+                </div>
+
+                <div id="Example_7" class="timeline-example"></div>
+            </div>
+        </div>
+
+
+        <div class = "examples" style = "float: left;">
+            <h2 class = "steps">8. Delete an Event </h2>
+
+            <div class = "substeps">
+                <div class = "description">
+                    <p>
+                        We could delete an event from specifying its unique Event ID. The event will then be removed from the timeline. If the event belongs to a tag, the event's title will also be removed from the tag's event list at the bottom left of the timeline. 
+                    </p>
+                </div>
+
+                <div class="code">
+                    <p> t1.deleteEvent("IP_1_8") // delete "Individual Proposal" </p>
+                    <p>  </p>
+                    <p> <b> ///// try the code below yourself! //// </b> </p>
+                    <p> t1.deleteEvent("A_1_8")  // delete "Asgmt.1"  </p>
+                    <p> // Hint: Event ID = "A_1_8"  </p> 
+                    <p> t1.deleteEvent("IP_2_8")  // delete "Individual Project"  </p>
+                </div>
+
+                <div class="tryout"> 
+                    <form id="deleteEvent_8">
+                        <input id="deleteId_8" type="text" placeholder="Event ID" required>
+                        <input type="submit" value="Delete Event" class="button">
+                    </form>
+                </div>
+ 
+                <div id="Example_8" class="timeline-example"></div>
+            </div>
+        </div>
+
+
+        <div class = "examples" style = "float: left;">
+            <h2 class = "steps">9. Change Color for Base (untagged) Events</h2>
+
+            <div class = "substeps">
+                <div class = "description">
+                    <p>
+                        We could specify a default/base colour for the events that don't belong to any tag. All events satifying this criteria will be coloured automatically. 
+                    </p>
+                </div>
+
+                <div class="code">
+                    <p> <b> ///// try the code below yourself! //// </b> </p>
+                    <p> t1.changeColorForBaseEvents("rgba(214, 247, 197, 1)") // change to bright green  </p>
+                    <p> // Hint: Pick a color you like!   </p> 
+                </div>
+
+                <div class="tryout"> 
+                    <form id="changeColorBaseEvents_9">
+                        <input id="newChangeColorBaseEvents_9" type="color" required>
+                        <input type="submit" value="Set Base Events Color" class="button">
+                    </form>
+                </div>
+
+                <div id="Example_9" class="timeline-example"></div>
+            </div>
+        </div>
+
+
+        <div class = "examples" style = "float: left;">
+            <h2 class = "steps">10. Change Timeline Background Color </h2>
+
+            <div class = "substeps">
+                <div class = "description">
+                    <p>
+                        We could specify a colour to be applied as the background colour of the timeline. 
+                    </p>
+                </div>
+
+                <div class="code">
+                    <p> <b> ///// try the code below yourself! //// </b> </p>
+                    <p> t1.changeBackground("rgba(123, 177, 234, 0.7)"); // change to blue  </p>
+                    <p> // Hint: Pick a color you like! </p> 
+                </div>
+
+                <div class="tryout"> 
+                    <form id="changeColorBackground_10">
+                        <input id="newChangeColorBackground_10" type="color" required>
+                        <input type="submit" value="Set Background Color" class="button">
+                    </form>
+                </div>
+
+                <div id="Example_10" class="timeline-example"></div>
+            </div>
+        </div>
+
+
+        <div class = "examples" style = "float: left;">
+            <h2 class = "steps">11. Clear All Events from Timeline </h2>
+
+            <div class = "substeps">
+                <div class = "description">
+                    <p>
+                        We could remove all existing events and tags from the timeline. Unless specified, the base colour will remain the same when creating new events to the now empty timeline. 
+                    </p>
+                </div>
+
+                <div class="code">
+                    <p> <b> ///// try the code below yourself! //// </b> </p>
+                    <p> t1.clearTimeline();    </p>
+                    <p> // Hint: Simply click the button!   </p> 
+                </div>
+
+                <div class="tryout"> 
+                    <form id="clearTimeline_11">
+                        <input type="submit" value="Clear All Events" class="button">
+                    </form>
+                </div>
+
+                <div id="Example_11" class="timeline-example"></div>
+            </div>
+        </div>
+
+
+
+
+        <div class = "examples" style = "float: left;">
+            <h2 class = "steps">Hope this library could make your life a little easier. Good luck with your project! </h2>
+        </div>
+
+        <div class="vspace1"></div>
+
+        <div class="vspace1"></div>
+
+        <div class="vspace1"></div>
+
+
+
+	</body>
+</html>

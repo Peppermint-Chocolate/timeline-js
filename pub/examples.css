@@ -1,0 +1,314 @@
+h1 {
+    margin-left: 30px; 
+    text-align: center;
+    /* text-transform: uppercase; */
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    color: hsl(240, 100%, 25%) ;
+    font-size: 250%;
+}
+
+h2 {
+    /* text-transform: uppercase; */
+    color: #000080 ;
+    font-size: 180%;
+    font-family: Optima, sans-serif; 
+    background: #a1dbfb;
+    width:fit-content; 
+    padding: 5px; 
+    border-radius: 5px;
+  }
+
+body{
+    background: #f0f0f0fc;
+}
+
+header {
+    /*background: #B3B3B3;*/
+    margin-top: -0.6%;
+    margin-left: 4%;
+    margin-right: 4%;
+    text-align: center;
+    background: #89d0f6;
+    /* background-repeat: no-repeat; */
+    /* background-size: 100%; */
+    padding: 1%;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+nav {
+    padding-left: 60px;
+}
+
+nav a{
+    text-align: center;
+    color:#565295;
+    background: rgba(226, 226, 226, 0.3); /*for darker background*/
+    background-color: #f1f0f080;
+    display: inline-block;
+    font-family: Optima, sans-serif; 
+    font-weight:540;
+    text-decoration: none;
+    width: 20%;
+    padding: 10px;
+    box-sizing: border-box;
+    height: 50px;
+    margin-right: 4%;
+    /*border: 4px solid #000000;*/
+    border-radius: 5px;
+    font-size: 140%;
+}
+
+form input {
+    background-color: #eaebf5; 
+    border-color: #000068;
+    /* color: hsl(240, 98%, 21%);  */
+}
+
+
+.active {
+    background:#70abca ;
+}
+
+
+.examples {
+    float: left; 
+    margin-left: 8%; 
+    margin-bottom: 25px;
+}
+
+.substeps {
+    float: left; 
+    margin-left: 30px; 
+    margin-bottom: 30px;
+    max-width: 85%; 
+}
+
+.top-description {
+    padding-top: 6px; 
+    line-height: 150%;
+    font-size: 1.7rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+    padding-bottom: 10px; 
+    color: hsl(240, 89%, 33%) 
+    /* max-width: 90%;  */
+}
+
+.second-title {
+    color: #000080 ;
+    margin-left: 8%; 
+    font-size: 260%;
+    font-weight: 500;
+    font-family: Optima, sans-serif; 
+    /* background: #a1dbfb; */
+    width:fit-content; 
+    padding: 5px; 
+}
+
+.description {
+    font-size: 1.3rem;
+    line-height: 140%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+    padding-bottom: 10px; 
+    color: hsl(240, 96%, 18%) 
+    /* max-width: 90%;  */
+}
+
+.code {
+    font-size: 1.1rem;
+    font-family: courier, courier new, serif; 
+    color: rgb(235, 233, 233); 
+    background-color: rgb(7, 1, 62);
+    margin-bottom: 20px;
+    padding: 7px; 
+    border-radius: 25px;
+    max-width: 98%;
+}
+
+.NavigationBar {
+    font-size: 18px;
+}
+
+.tryout {
+    margin-top: 35px; 
+    margin-bottom: 15px;
+}
+
+.tryout input {
+    height: 30px;
+    font-size: 1.3rem;
+    min-width: 100px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+
+}
+
+.example0 {
+    margin-left: 100px;
+    margin-top: 5px; 
+}
+
+.example0 input {
+    height: 27px;
+    font-size: 1.2rem;
+    min-width: 130px;
+    margin-top: 7px;
+    margin-left: 3px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+}
+
+.timeline-example {
+    margin-left: -4%; 
+    margin-top: 3%;
+}
+
+.button {
+    background-color: #c6d6de; 
+    color: hwb(240 0% 58%); 
+}
+
+.shrink {
+    max-width: 1200px;
+}
+
+.homepage {
+    float: left; 
+    margin-left: 8%; 
+    margin-bottom: 25px;
+}
+
+.homepage-description {
+    font-size: 1.3rem;
+    line-height: 150%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+    padding-bottom: 10px; 
+    color: hsl(240, 96%, 18%); 
+    max-width: 1200px; 
+}
+
+.homepage-code {
+    font-size: 1.1rem;
+    font-family: courier, courier new, serif; 
+    color: rgb(235, 233, 233); 
+    background-color: rgb(7, 1, 62);
+    margin-bottom: 20px;
+    padding: 7px; 
+    border-radius: 25px;
+    width:fit-content;
+    max-width: 98%;
+}
+
+.homepage-timeline {
+    margin-left: 8%;
+    margin-top: 2%;
+    margin-bottom: 40px;
+}
+
+.scrolldown {
+    font-size: 1.4rem;
+    text-align: center;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+    color: hsl(240, 96%, 18%) 
+}
+
+
+div.vspace1 {
+    clear: both;
+    height: 2em;
+}
+
+div.vspace2 {
+    clear: both;
+    height: 2em;
+}
+
+.methods-heading {
+    font-size: 1.5rem;
+    background-color: transparent;
+    /* text-decoration: underline overline;
+    margin: 2px; */
+}
+
+.methods-description {
+    font-size: 1.3rem;
+    line-height: 150%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+    padding-bottom: 25px; 
+    color: hsl(240, 96%, 18%);
+    max-width: 1150px; 
+}
+
+.methods {
+    padding-bottom: 35px;
+    margin-left: 25px;
+    max-width: 1200px;
+}
+
+.started-code {
+    font-size: 1.1rem;
+    font-family: courier, courier new, serif; 
+    color: rgb(235, 233, 233); 
+    background-color: rgb(7, 1, 62);
+    margin-bottom: 40px;
+    padding: 0.1px; 
+    border-radius: 25px;
+    width: fit-content; 
+    max-width: 900px;
+    /* padding-bottom: 15px; */
+}
+
+.methods-code {
+    font-size: 1.1rem;
+    font-family: courier, courier new, serif; 
+    color: rgb(235, 233, 233); 
+    background-color: rgb(7, 1, 62);
+    margin-bottom: 20px;
+    padding-left: 15px; 
+    padding-right: 15px; 
+    padding-top: 5px; 
+    padding-bottom: 5px; 
+    border-radius: 25px;
+    width: fit-content; 
+    max-width: 1050px;
+}
+
+table{
+    border-collapse: collapse;
+    width: 85%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+    font-size: 115%;
+    /* margin-left: 7%; */
+    margin-bottom: 3%;
+}
+
+th {
+    background: #a2cde5;
+    color: #FFFFFF;
+    border: solid #e5f1fa;
+    border-width: 2px, 4px, 2px, 2px;
+}
+
+table tr th:first-of-type {
+  border-top-left-radius: 15px;
+}
+
+table tr th:last-of-type {
+  border-top-right-radius: 15px;
+}
+
+td{
+  background: #d4e7f3;
+  opacity: 0.75;
+  color: #161515;
+  border: 2px solid #f5dede;
+}
+
+td, th {
+    padding: 1.2%;
+}
+
+td:hover {
+    opacity: 1;
+    font-size: 103%;
+}
+
+
