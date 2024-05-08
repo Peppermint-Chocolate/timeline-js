@@ -1,5 +1,4 @@
 # TIMELINE.JS :mantelpiece_clock:
-CSC309 Individual Project 
 
 Link to website: https://timeline-js.herokuapp.com/
 
